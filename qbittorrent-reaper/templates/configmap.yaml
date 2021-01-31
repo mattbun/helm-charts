@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: qbittorrent-reaper
+data:
+  QBITTORRENT_HOST: {{ .Values.config.qbittorrentHost | quote }}
+  QBITTORRENT_PORT: {{ .Values.config.qbittorrentPort | quote }}
+  QBITTORRENT_PROTOCOL: {{ .Values.config.qbittorrentProtocol | quote }}
+  MAX_TORRENT_AGE: {{ .Values.config.maxTorrentAge | quote }}
+  {{ if .Values.config.deleteFiles }}
+  DELETE_FILES: "1"
+  {{ end }}
+  {{ if .Values.config.deleteFiles }}
+  DRY_RUN: "1"
+  {{ end }}

@@ -1,0 +1,21 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: qbittorrent-reaper
+spec:
+  schedule: {{ .Values.cronjob.schedule }}
+  concurrencyPolicy: {{ .Values.cronjob.concurrencyPolicy }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: qbittorrent-reaper
+            image: mattbun/qbittorrent-reaper
+            imagePullPolicy: IfNotPresent
+            envFrom:
+              - configMapRef:
+                  name: qbittorrent-reaper
+              - secretRef:
+                  name: qbittorrent-reaper
+          restartPolicy: {{ .Values.cronjob.restartPolicy }}

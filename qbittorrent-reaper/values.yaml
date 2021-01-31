@@ -1,0 +1,14 @@
+config:
+  qbittorrentHost:
+  qbittorrentPort: 8080
+  qbittorrentProtocol: http
+  qbittorrentUsername:
+  qbittorrentPassword:
+  maxTorrentAge: 2w
+  dryRun: false
+  deleteFiles: false
+
+cronjob:
+  schedule: "0 0 * * *" # daily at midnight
+  concurrencyPolicy: Replace
+  restartPolicy: OnFailure
