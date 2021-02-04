@@ -2,6 +2,11 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: qbittorrent-reaper
+  labels:
+    app.kubernetes.io/name: {{ template "name" . }}
+    helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version \| replace "+" "_" }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   schedule: {{ .Values.cronjob.schedule }}
   concurrencyPolicy: {{ .Values.cronjob.concurrencyPolicy }}
