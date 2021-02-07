@@ -10,6 +10,6 @@ data:
   {{ if .Values.config.deleteFiles }}
   DELETE_FILES: "1"
   {{ end }}
-  {{ if .Values.config.deleteFiles }}
+  {{ if .Values.config.dryRun }}
   DRY_RUN: "1"
   {{ end }}
