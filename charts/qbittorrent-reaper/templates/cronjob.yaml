@@ -16,8 +16,8 @@ spec:
         spec:
           containers:
           - name: qbittorrent-reaper
-            image: mattbun/qbittorrent-reaper
-            imagePullPolicy: IfNotPresent
+            image: mattbun/qbittorrent-reaper:{{ .Values.imageTag }}
+            imagePullPolicy: {{ .Values.imagePullPolicy }}
             envFrom:
               - configMapRef:
                   name: qbittorrent-reaper

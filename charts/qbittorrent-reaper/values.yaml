@@ -9,5 +9,7 @@ qbittorrentProtocol: http
 qbittorrentUsername:
 qbittorrentPassword:
 
+imageTag: main
+imagePullPolicy: IfNotPresent
 concurrencyPolicy: Replace
 restartPolicy: OnFailure
