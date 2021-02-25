@@ -8,8 +8,8 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
-  schedule: {{ .Values.cronjob.schedule }}
-  concurrencyPolicy: {{ .Values.cronjob.concurrencyPolicy }}
+  schedule: {{ .Values.schedule }}
+  concurrencyPolicy: {{ .Values.concurrencyPolicy }}
   jobTemplate:
     spec:
       template:
@@ -23,4 +23,4 @@ spec:
                   name: qbittorrent-reaper
               - secretRef:
                   name: qbittorrent-reaper
-          restartPolicy: {{ .Values.cronjob.restartPolicy }}
+          restartPolicy: {{ .Values.restartPolicy }}
