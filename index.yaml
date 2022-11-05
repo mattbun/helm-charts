@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   generic:
   - apiVersion: v2
+    created: "2022-11-05T16:58:15.722841765Z"
+    description: A generic helm chart to use with any image
+    digest: 0c46a17785749771e21721cd127f4c1d88e31ead2fc2b4695529a1c83394f90a
+    name: generic
+    type: application
+    urls:
+    - https://github.com/mattbun/helm-charts/releases/download/generic-0.2.0/generic-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2022-11-05T15:38:05.962498843Z"
     description: A generic helm chart to use with any image
     digest: d213e2d502b06abb2a2d7cfb75732664e6c6fae1359923a050b58de8ee5f3fa1
@@ -30,4 +39,4 @@ entries:
     urls:
     - https://github.com/mattbun/helm-charts/releases/download/qbittorrent-reaper-0.1.0/qbittorrent-reaper-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-05T15:38:05.962507043Z"
+generated: "2022-11-05T16:58:15.722854565Z"
